@@ -3,4 +3,5 @@
 1) Clone repository
 2) Run command "npm install"
 3) Restore sql dump "node_test.sql"
-4) Run command "npm start"
+4) Configure DB connection const in server.js
+5) Run command "npm start"
