@@ -66,7 +66,7 @@ app.get('/exchanges', (req, res) => {
         let exchanges = [];
         if (data[0].error) {
             res.render('exchanges.twig', {
-                error: 'Произошел сбой! Обновите страницу позже!'
+                error: 'Oops! Refresh the page later!'
             });
         } else {
             data.map(item => {
