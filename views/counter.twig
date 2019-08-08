@@ -1,0 +1,23 @@
+{% include 'header.twig' %}
+<div class="container">
+    <div class="row">
+        <h1 class="title">{{ message }}</h1>
+    </div>
+</div>
+<div class="container">
+    <button id="counter" class="waves-effect waves-light btn">Click me(0)</button>
+</div>
+<script type="text/javascript">
+    const handler = () => {
+        let count = ++app.state.count;
+        const btn = document.getElementById('counter');
+        btn.innerText = 'Click me(' + count + ')';
+        if (count === 3) {
+            btn.innerText = 'Complete!';
+            btn.removeEventListener('click', handler, false)
+        }
+    };
+    document.getElementById('counter').addEventListener('click', handler);
+    document.getElementById('counter').addEventListener('click', handler);
+</script>
+{% include 'footer.twig' %}

@@ -1,0 +1,29 @@
+{% include 'header.twig' %}
+<div class="container">
+    <div class="row">
+        <h1 class="title">User list</h1>
+    </div>
+</div>
+<div class="container">
+    <table class="highlight">
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.status }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% include 'footer.twig' %}

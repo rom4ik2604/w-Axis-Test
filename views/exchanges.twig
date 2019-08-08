@@ -1,0 +1,33 @@
+{% include 'header.twig' %}
+<div class="container">
+    <div class="row">
+        <h1 class="title">{{ message }}</h1>
+    </div>
+    {% if error %}
+        <div class="row">
+            <h2>{{ error }}</h2>
+        </div>
+    {% else %}
+        <table class="highlight">
+            <thead>
+            <tr>
+                <th>№</th>
+                <th>Дата</th>
+                <th>USD</th>
+                <th>EUR</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for exchange in exchanges %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ exchange.date }}</td>
+                    <td>{{ exchange.usd }}</td>
+                    <td>{{ exchange.eur }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</div>
+{% include 'footer.twig' %}
