@@ -1,8 +1,15 @@
 const express = require('express');
 const app = express();
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('node_test', 'root', '', {
-    host: 'localhost',
+
+/* DB_CONFIG */
+const DB_HOST = 'localhost';
+const DB_NAME = 'node_test';
+const DB_USER = 'root';
+const DB_PASSWORD = '';
+
+const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
+    host: DB_HOST,
     dialect: 'mysql',
 });
 const helpers = require('./helpers');
